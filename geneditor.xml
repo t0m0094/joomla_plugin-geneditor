@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system" method="upgrade">
+	<name>System - GenEditor</name>
+	<author>Tom Arns</author>
+	<creationDate>August 2021</creationDate>
+	<copyright>(C) 2021 Tom Arns</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE</license>
+	<authorEmail>mail@tomarns.nl</authorEmail>
+	<authorUrl>www.tomarns.nl</authorUrl>
+	<version>3.0.0</version>
+	<description>Joomla plugin to hide or set a custom generator tag</description>
+
+	<files>
+		<filename plugin="geneditor">geneditor.php</filename>
+		<filename>index.html</filename>
+	</files>
+
+	<updateservers>
+		<server type="extension" name="GenEditor plugin" priority="1">https://raw.githubusercontent.com/t0m0094/joomla_packageupdate/main/j3-plugin_geneditor.xml</server>
+	</updateservers>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="generator_status"
+					type="radio"
+					label="Show the generator Meta tag"
+					class="switcher"
+					default="1"
+					filter="integer"
+				>
+					<option value="0">JOFF</option>
+					<option value="1">JON</option>
+				</field>
+				<field
+					name="generator_custom"
+					type="text"
+					label="Define a custom generator Tag"
+					default="Just a custom generator tag"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
